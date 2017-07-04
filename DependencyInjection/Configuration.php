@@ -24,7 +24,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('handler')
-                ->defaultValue(SymfonyFlashHandler::class)
+                    ->defaultValue(SymfonyFlashHandler::class)
                 ->end()
             ->end();
 
