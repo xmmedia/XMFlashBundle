@@ -1,9 +1,10 @@
 <?php
 
-
 namespace XM\FlashBundle\DependencyInjection;
+
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use XM\FlashBundle\SymfonyFlashHandler;
 
 /**
  * This is the class that validates and merges configuration from your app/config files
@@ -18,11 +19,14 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('xm_controller');
+        $rootNode = $treeBuilder->root('xm_flash');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('handler')
+                ->defaultValue(SymfonyFlashHandler::class)
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }
