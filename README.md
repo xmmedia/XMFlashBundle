@@ -1,4 +1,4 @@
-# XMFlashBunlde
+# XMFlashBundle
 Makes adding & translating flash messages in Symfony simple.
 
 ## Installation
