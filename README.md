@@ -48,7 +48,7 @@ flash_handler: '@xm_flash.handler'
 
 ## Usage
 
-**The handler will always pull messages from the default transation file,**
+**The handler will always pull messages from the default translation file,**
 typically messages.
 
 #### Just a message, no translation:
