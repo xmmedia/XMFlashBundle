@@ -9,6 +9,7 @@ interface FlashHandler
      *
      * @param string $type    The type
      * @param string $message The message
+     * @param array  $params  The parameters for translation
      */
-    public function add($type, $message);
+    public function add($type, $message, array $params = []);
 }

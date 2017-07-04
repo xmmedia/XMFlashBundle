@@ -39,3 +39,28 @@ class AppKernel extends Kernel
     }
 }
 ```
+
+### Step 3: Add Service Alias
+
+Adding the following will make the call to the service shorter:
+
+```
+flash_handler: '@xm_flash.handler'
+```
+
+## Usage
+
+**The handler will always pull messages from the default transation file,**
+typically messages.
+
+#### Just a message, no translation:
+
+```
+$this->get('flash_handler')->add('success', 'The record was saved.');
+```
+
+#### With translation message key and parameters:
+
+```
+$this->get('flash_handler')->add('success', 'app.message.entity_updated', ['%name%' => 'User']);
+```

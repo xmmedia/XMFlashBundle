@@ -19,9 +19,12 @@ class SymfonyFlashHandler implements FlashHandler
     /**
      * {@inheritdoc}
      */
-    public function add($type, $message)
+    public function add($type, $message, array $params = [])
     {
-        $this->session->getFlashBag()->add($type, $this->trans($message));
+        $this->session->getFlashBag()->add(
+            $type,
+            $this->trans($message, $params)
+        );
 
         return $this;
     }
@@ -29,8 +32,8 @@ class SymfonyFlashHandler implements FlashHandler
     /**
      * Translates the message with the params.
      *
-     * @param       $message
-     * @param array $params
+     * @param string $message
+     * @param array  $params
      * @return string
      */
     protected function trans($message, array $params = [])
