@@ -5,7 +5,7 @@ namespace XM\FlashBundle;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Translation\TranslatorInterface;
 
-class SymfonyFlashHandler implements FlashHandler
+class SymfonyFlashHandler implements FlashHandlerInterface
 {
     private $session;
     private $translator;

@@ -2,7 +2,7 @@
 
 namespace XM\FlashBundle;
 
-interface FlashHandler
+interface FlashHandlerInterface
 {
     /**
      * Adds a flash message to the current session for type.
