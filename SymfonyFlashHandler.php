@@ -7,8 +7,8 @@ use Symfony\Component\Translation\TranslatorInterface;
 
 class SymfonyFlashHandler implements FlashHandlerInterface
 {
-    private $session;
-    private $translator;
+    protected $session;
+    protected $translator;
 
     public function __construct(Session $session, TranslatorInterface $translator)
     {
